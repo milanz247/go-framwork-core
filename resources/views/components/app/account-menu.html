@@ -1,0 +1,13 @@
+{{define "app/account-menu"}}
+  <details class="account-dropdown">
+    <summary aria-label="Account menu">{{template "ui/avatar" .User.name}}<span class="sidebar-label user-info"><strong>{{.User.name}}</strong><small>{{.User.email}}</small></span><svg class="icon sidebar-label account-chevron" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><use href="/static/icons.svg#chevrons"></use></svg></summary>
+    <div class="account-menu">
+      <div class="menu-user">{{template "ui/avatar" .User.name}}
+        <div><strong>{{.User.name}}</strong><small>{{.User.email}}</small></div></div>
+      <div class="menu-separator"></div>
+      <button type="button" data-action="account">{{template "ui/icon" "user"}}Your account</button>
+      <button type="button" data-action="theme">{{template "ui/theme-icon" .}}<span data-theme-label>Switch to dark mode</span></button>
+      <form action="/logout" method="post" hx-disabled-elt="find button[type=submit]">{{template "ui/csrf" .CSRF}}
+        <button type="submit">{{template "ui/icon" "logout"}}Log out</button></form></div>
+  </details>
+{{end}}

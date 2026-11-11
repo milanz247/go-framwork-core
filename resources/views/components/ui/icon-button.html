@@ -1,0 +1,3 @@
+{{define "ui/icon-button"}}
+  <button type="button" class="icon-button {{.Class}}" data-action="{{.Action}}" aria-label="{{.Label}}" title="{{.Label}}" {{if .Controls}}aria-controls="{{.Controls}}" aria-expanded="{{.Expanded}}"{{end}}>{{template "ui/icon" .Icon}}</button>
+{{end}}

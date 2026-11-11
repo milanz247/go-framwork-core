@@ -1,0 +1,10 @@
+{{define "app/sidebar"}}
+  <aside id="sidebar" class="sidebar" aria-label="Workspace navigation" tabindex="-1">
+    <a class="brand" href="/dashboard" title="IT Support home"><span class="brand-mark">{{template "ui/icon" "overview"}}</span><span class="sidebar-label">IT Support</span></a>
+    {{template "ui/icon-button" (dict "Class" "sidebar-close" "Action" "close-sidebar" "Label" "Close navigation" "Icon" "close")}}
+    {{template "app/navigation" .}}
+    <div class="sidebar-bottom">
+      {{template "app/account-menu" .}}
+    </div>
+  </aside>
+{{end}}

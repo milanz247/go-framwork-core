@@ -1,0 +1,10 @@
+{{define "app/account-dialog"}}
+  <dialog id="account-dialog" class="account-dialog" aria-labelledby="account-title" aria-describedby="account-description">
+    {{template "ui/icon-button" (dict "Class" "dialog-close" "Action" "close-account" "Label" "Close account details" "Icon" "close")}}
+    <h2 id="account-title">Your account</h2>
+    <p id="account-description">Your personal details and workspace access.</p><dl>
+      <div><dt>Name</dt><dd>{{.User.name}}</dd></div>
+      <div><dt>Email address</dt><dd>{{.User.email}}</dd></div></dl>
+    <form method="dialog" hx-boost="false">
+      {{template "ui/button" (dict "Type" "submit" "Class" "primary" "Label" "Done")}}</form></dialog>
+{{end}}

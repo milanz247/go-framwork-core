@@ -1,0 +1,3 @@
+{{define "page/login"}}
+  {{template "auth/form" (dict "Action" "/login" "Heading" "Log in to your account" "Description" "Enter your email and password below to log in." "SubmitLabel" "Log in" "SwitchText" "Don’t have an account?" "SwitchURL" "/register" "SwitchLabel" "Sign up" "CSRF" .CSRF "Email" .Email "Error" .Error)}}
+{{end}}

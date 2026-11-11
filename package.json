@@ -1,0 +1,21 @@
+{
+  "name": "ticket-sync-mvc",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "build": "tailwindcss -i resources/css/app.css -o public/assets/css/app.css --minify && node framework/tooling/assets.mjs",
+    "watch": "tailwindcss -i resources/css/app.css -o public/assets/css/app.css --watch",
+    "dev": "npm run build && node framework/tooling/dev.mjs",
+    "fmt:html": "node framework/tooling/format-templates.mjs",
+    "fmt:html:check": "node framework/tooling/format-templates.mjs --check"
+  },
+  "devDependencies": {
+    "@tailwindcss/cli": "4.1.18",
+    "htmx.org": "2.0.8",
+    "tailwindcss": "4.1.18"
+  },
+  "engines": {
+    "node": ">=22.16.0"
+  }
+}

@@ -1,0 +1,19 @@
+{{define "layout/base"}}
+  <!doctype html>
+  <html lang="en">
+    <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <meta name="htmx-config" content='{"historyCacheSize":0,"refreshOnHistoryMiss":true,"allowEval":false,"includeIndicatorStyles":false}'>
+      <title>{{.Title}} · IT Support</title>
+      <script src="/static/js/app.js" defer></script>
+      <script src="/static/js/htmx.min.js" defer></script>
+      <link rel="stylesheet" href="/static/css/app.css">
+    </head>
+    <body hx-history="false">
+      {{if .Auth}}{{template "layout/auth" .}}{{else}}{{template "layout/app" .}}{{end}}
+      <div id="network-error" class="network-error" role="alert" hidden>Unable to complete the request. Please try again.</div>
+      {{if .Dev}}<script src="/dev/refresh.js" defer></script>{{end}}
+    </body>
+  </html>
+{{end}}

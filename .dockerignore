@@ -1,0 +1,13 @@
+.env
+.git
+node_modules
+bin
+.tmp
+data
+*.db*
+*.key
+
+*.tar.gz
+
+# Local private files are never source or build inputs.
+private/

@@ -1,0 +1,6 @@
+{{define "app/navbar"}}
+  <header class="workspace-header">
+    {{template "ui/icon-button" (dict "Class" "sidebar-toggle" "Action" "sidebar" "Label" "Toggle navigation" "Controls" "sidebar" "Expanded" "true" "Icon" "panel-close")}}
+    <nav class="breadcrumbs" aria-label="Breadcrumb"><span aria-current="page">Dashboard</span></nav>
+    {{template "ui/theme-toggle" "header-theme"}}</header>
+{{end}}

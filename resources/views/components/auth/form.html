@@ -1,0 +1,13 @@
+{{define "auth/form"}}
+  <form hx-disabled-elt="find button[type=submit]" action="{{.Action}}" method="post" class="auth-form">
+    <header class="auth-form-heading">
+      <h1>{{.Heading}}</h1>
+      <p>{{.Description}}</p></header>
+    {{template "ui/alert" .Error}}
+    {{template "ui/csrf" .CSRF}}
+    {{template "ui/field" (dict "Label" "Email address" "Name" "email" "Value" .Email "Type" "email" "Required" true "Autocomplete" "email" "Placeholder" "email@example.com")}}
+    {{template "ui/password-field" (dict "ID" "auth-password" "Name" "password" "Label" "Password" "Required" true "Autocomplete" "current-password" "Help" .PasswordHelp)}}
+    {{template "ui/button" (dict "Type" "submit" "Class" "primary" "Label" .SubmitLabel)}}
+    <p class="auth-switch">{{.SwitchText}} <a href="{{.SwitchURL}}">{{.SwitchLabel}}</a></p>
+  </form>
+{{end}}

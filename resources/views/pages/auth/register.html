@@ -1,0 +1,3 @@
+{{define "page/register"}}
+  {{template "auth/form" (dict "Action" "/register" "Heading" "Create an account" "Description" "Enter your existing IT Support credentials to get started." "SubmitLabel" "Verify and create account" "SwitchText" "Already have an account?" "SwitchURL" "/login" "SwitchLabel" "Log in" "PasswordHelp" "Use the password for your existing IT Support account." "CSRF" .CSRF "Email" .Email "Error" .Error)}}
+{{end}}

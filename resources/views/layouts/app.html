@@ -1,0 +1,13 @@
+{{define "layout/app"}}
+  <div id="workspace" class="workspace" hx-boost="true" hx-target="#workspace" hx-swap="outerHTML">
+    <a class="skip-link" href="#main" hx-boost="false">Skip to content</a>
+    {{template "app/sidebar" .}}
+    <button class="sidebar-backdrop" data-action="close-sidebar" aria-label="Close navigation" tabindex="-1" hidden></button>
+    <div class="workspace-body">
+      {{template "app/navbar" .}}
+      <main id="main" class="dashboard-main" tabindex="-1">{{template "page/dashboard" .}}</main>
+      {{template "app/footer" .}}
+    </div>
+    {{template "app/account-dialog" .}}
+  </div>
+{{end}}

@@ -1,0 +1,12 @@
+{{define "layout/auth"}}
+  <div id="workspace" class="auth-shell" hx-boost="true" hx-target="#workspace" hx-swap="outerHTML">
+    {{template "ui/theme-toggle" "auth-theme"}}
+    <main class="auth-main">
+      <div class="auth-panel">
+        {{template "auth/logo" .}}
+        {{if .Register}}{{template "page/register" .}}{{else}}{{template "page/login" .}}{{end}}
+      </div>
+    </main>
+    {{template "auth/footer" .}}
+  </div>
+{{end}}
